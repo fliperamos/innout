@@ -4,7 +4,6 @@
 function loadModel($modelName)
 {
     require_once(MODEL_PATH . "/{$modelName}.php");
-
 }
 //Carrega a view
 function loadView($viewName, $params = array())
@@ -17,7 +16,6 @@ function loadView($viewName, $params = array())
         }
     }
     require_once(VIEW_PATH . "/{$viewName}.php");
-
 }
 //Carrega a view dentro do template da APP
 function loadTemplateView($viewName, $params = array())
@@ -29,6 +27,8 @@ function loadTemplateView($viewName, $params = array())
             }
         }
     }
+    require_once(TEMPLATE_PATH . "/header.php");
+    require_once(TEMPLATE_PATH . "/left.php");
     require_once(VIEW_PATH . "/{$viewName}.php");
-
+    require_once(TEMPLATE_PATH . "/footer.php");
 }
